@@ -1,0 +1,43 @@
+Engine starts
+Reads configuration from some file
+Listens on some port for input
+  input connects
+  New socket in thread
+  Sends Mode
+    Mode I-
+      Engine Sends Data on Available Plugins
+      Closes Socket
+    Mode II-
+      Client requests Plugin XMLs
+      Engine sends plugin Xmls
+      Closes Socket
+    Mode III-
+      Client sends data - plugin + map + output info
+      Engine separates plugin map and output info
+      Engine checks compatibility on plugins
+	If unsuccessfull, ask client to update with incompatible info
+      Closes Socket
+      New Core Session created with data
+      Separates data into plugin / map/ Output
+	initializes array with data
+	  start Phase I
+	    check score using Phase I plugins
+	    calls movement
+	    check new score
+	    if improved repeat movement
+	    else think another move
+	    Phase I finishes
+	  start phase II
+	    calls Phase II plugin with final Map
+	  Integrates information
+      Opens socket to client output
+      Sends Data
+    Closes thread
+
+
+  Connects to output port
+  Sends output
+  Closes engine session
+    
+
+//planned feature: make a UI for Config editor for engine
