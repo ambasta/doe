@@ -1,0 +1,13 @@
+Layout:
+
+Frontend consists of a Menu Bar, a Context Area, and three Panes.  The three Panes are to list plugins available, to define on-the-fly new plugins of type II, and the work area.
+Menu Bar:
+Context Area:
+Displays status messages, suggestions, and acts as a "ribbon".  Grey glass that becomes opaque blue with saturation dependant on priority of content displayed.
+Object Pane:
+Grey glass that flips down on when label in context area is clicked.  Objects for each plugin (for example, garbage-source) are represented by icons (chosen by the plugin developer) that are highlighted.  All icons slide, as on glass, when the pane flips down.
+Tools Pane:
+Similar to the object pane, but contains only the icons that the user is interested in.  Properties are added to icons (if currently blank) by dragging plugin icons onto the icon for the new plugin.  They are then represented by 16x16 icons in a row over the bottom left of the new plugin's icon.  
+Work Area:
+The work area is used to display, in (upto) 3D, icons that represent time along one axis and space along the other(s).  We need to figure out how to explore the 3D space with a mouse.
+
