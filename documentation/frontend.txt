@@ -11,3 +11,16 @@ Similar to the object pane, but contains only the icons that the user is interes
 Work Area:
 The work area is used to display, in (upto) 3D, icons that represent time along one axis and space along the other(s).  We need to figure out how to explore the 3D space with a mouse.
 
+
+Properties:
+
+There are three objects for which properties need to be defined
+1) Nodes need to know which plugins' properties they are attributed with
+2) Pairs of nodes (edges in the graph) have properties that affect them
+3) The graph as a whole can be passed as an argument to a plugin
+
+Once these properties are defined, the graph with its properties, its edges and nodes (and their properties) can be sent to the engine.
+
+
+
+
