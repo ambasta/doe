@@ -1,0 +1,18 @@
+<PlugName> Proximity </PlugName>		-- type string
+<PlugVer> 2.2 </PlugVer>				-- type float
+<Stage> 1 </Stage>						-- type integer E (1,2)
+<InputSection>
+	<Input name = "from" type = div> id1 </Input>
+	<Input name = "to" type = div> id2 </Input>
+	<Input name = "weight" type = zinteger> 3 </Input>
+	<Input name = "type" type = boolean> true </Input>
+</InputSection>
+
+<PlugName> Area </PlugName>
+<PlugVer> 1.2 </PlugVer>
+<Stage> 1 </Stage>
+<InputSection>
+	<Input name = "Area Of" type = div> id1 </Input>
+	<Input name = "length"> type = pinteger> 4 </Input>
+	<Input name = "width"> type = pinteger> 4 </Input>
+</InputSection>
