@@ -14,13 +14,9 @@ The work area is used to display, in (upto) 3D, icons that represent time along 
 
 Properties:
 
-There are three objects for which properties need to be defined
-1) Nodes need to know which plugins' properties they are attributed with
-2) Pairs of nodes (edges in the graph) have properties that affect them
-3) The graph as a whole can be passed as an argument to a plugin
+Properties are defined on sets of nodes so that these nodes can be passed as arguments to the appropriate plugins.
 
-Once these properties are defined, the graph with its properties, its edges and nodes (and their properties) can be sent to the engine.
-
+Once these properties are defined, the graph and its properties can be sent to the engine.
 
 
 
