@@ -1,2 +1,1 @@
-This is basically a mock run of the algorithm on proximity plugin for proof of concept.
-We need to implement server client and a modular architecture in further releases.
+This is the basic server client model.  We need to implement XML communication and service clients in place of plugins.
