@@ -12,6 +12,7 @@ namespace doe
 
         private void HandleClientComm(Object client)
         {
+            Console.WriteLine("Server: Client Connected");
             TcpClient tcpclient = (TcpClient)client;
 
             byte[] message = new byte[4096];
@@ -31,13 +32,13 @@ namespace doe
 
                 if (readbytes == 0)
                 {
-                    System.Console.WriteLine("Client Disconnected");
+                    System.Console.WriteLine("Server: Client Disconnected");
                     break;
                 }
 
                 ASCIIEncoding encode = new ASCIIEncoding();
-                System.Console.WriteLine(encode.GetString(message, 0, readbytes));
-                clientStream.Write(message, 0, message.Length);
+                Console.WriteLine("Server: Read "+readbytes +" bytes. Message: "+encode.GetString(message, 0, readbytes));
+                clientStream.Write(message, 0, readbytes);
                 clientStream.Flush();
                 if (encode.GetString(message, 0, readbytes).Equals("End"))
                     break;
@@ -52,7 +53,7 @@ namespace doe
             {
                 TcpClient client = this.tcpListener.AcceptTcpClient();
                 Thread clientThread = new Thread(new ParameterizedThreadStart(HandleClientComm));
-                clientThread.Start();
+                clientThread.Start(client);
             }
         }
 
@@ -65,36 +66,47 @@ namespace doe
 
     class Client
     {
+        IPEndPoint serverEndPoint;
+        TcpClient client;
+
         public Client()
         {
-            TcpClient client = new TcpClient();
-            IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000);
+            serverEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000);
+        }
 
-            client.Connect(serverEndPoint);
-
+        public void connect()
+        {
+            client = new TcpClient();
+            try
+            {
+                client.Connect(serverEndPoint);
+                Console.WriteLine("Client: Connected to server");
+            }
+            catch
+            {
+                Console.WriteLine("Client: Connection failed");
+                Environment.Exit(0);
+            }
+            
             NetworkStream clientStream = client.GetStream();
-
-            ASCIIEncoding encoder = new ASCIIEncoding();
-            byte[] buffer = encoder.GetBytes("Hello Server");
-
-            clientStream.Write(buffer, 0, buffer.Length);
             while (true)
             {
+
+                ASCIIEncoding encoder = new ASCIIEncoding();
+                byte[] buffer = encoder.GetBytes(Console.ReadLine());
+
+                clientStream.Write(buffer, 0, buffer.Length);
                 buffer = new byte[4096];
-                int blen;
-
-                try
-                {
-                    blen = clientStream.Read(buffer, 0, 4096);
-                }
-                catch
-                {
-                    Console.WriteLine("Error while reading from server");
-                }
-
-                Console.WriteLine(encoder.GetString(buffer));
+                int blen = clientStream.Read(buffer, 0, 4096);
+                Console.WriteLine("Client: Read "+blen+" bytes. Message: " +encoder.GetString(buffer, 0, blen));
                 clientStream.Flush();
+                if (encoder.GetString(buffer, 0, blen).Equals("end"))
+                {
+                    Console.WriteLine("Quitting");
+                    break;
+                }
             }
+            client.Close();
         }
     }
 
@@ -102,18 +114,20 @@ namespace doe
     {
         public static void Main(String[] args)
         {
-            int choice;
-            choice = Console.Read()-'0';
-            Console.WriteLine(choice);
-            if (choice == 1)
+            Thread myThread;
+            int val = Int32.Parse(Console.ReadLine());
+            if (val == 1)
             {
                 Server myserver = new Server();
-                myserver.ListenForClients();
+                myThread = new Thread(new ThreadStart(myserver.ListenForClients));
             }
             else
             {
                 Client myclient = new Client();
+                myThread = new Thread(new ThreadStart(myclient.connect));
             }
+
+            myThread.Start();
         }
     }
 }
