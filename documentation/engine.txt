@@ -1,0 +1,39 @@
+Engine starts
+Engine listens for client
+Client connects
+	Client registers
+		With ID
+			Service does not exist
+				Engine creates service
+		Without ID
+			Engine creates service
+		Engine assigns client to service
+		Client sends name and paramlist
+		Client sends service description
+		Engine sends id
+	Client sends service query
+		Engine queries service list
+		Engine sends query result
+	Client requests engine config
+		pass
+	Client changes engine config
+		pass
+	Client requests session
+		With ID
+			Session does not exist
+				Engine creates session
+			Engine assigns client to session
+		Without ID
+			Engine creates session
+		Engine sends session id
+	Client modifies session
+		Client sends subgraph
+		Engine checks score
+			Engine updates session
+		Engine sends updated session
+	Client requests service 
+		pass
+	Client ends session
+		Engine serialises session as XML file
+	Client quits
+		Engine changes status of client to offline
