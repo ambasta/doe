@@ -1,32 +1,73 @@
 using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace doe
 
-// Registered Client
+// Registered client
 public class Service {
-        public int id = 0;
+        [XmlAttribute("id")] public int id = 0;
         public Socket socket = null;
-        public string name = "";
-        public string description = "";
-        public Service() {
+        [XmlAttribute("name")] public String name = "";
+        [XmlAttribute("description")] public String description = "";
+
+	public Service() {
         }
+	
+	public Service(Socket serviceSocket, string serviceName, string serviceDescription) {
+		socket = serviceSocket;
+		name = serviceName;
+		description = serviceDescription;
+	}
+
+	public bool Query(String query) {
+		if ((name.IndexOf(query) > -1) || (description.IndexOf(query) > -1)) return True;
+		else return False;
+	}
 }
+
+[XmlRoot("ServiceList")]
+public class ServiceList {
+	private ArrayList listService;
+	
+	public ServiceList() {
+		listService = new ArrayList();
+	}
+
+	[XmlElement("Service")]
+	public Service[] Services {
+		get {
+			Service[] services = new Service[ listService.Count() ];
+			listService.CopyTo( services );
+			return services;
+		}
+		set {
+			if( value==null ) return;
+			Service[] services = (Item[])value;
+			listService.Clear();
+			foreach( Service service in services )
+				listService.Add( service );
+		}
+	}
+
+	public int AddService( Service service ) {
+		return listService.Add( service );
+	}
+
+}
+
 // State object for reading client data asynchronously
 public class StateObject {
-    // Client  socket.
-    public Socket workSocket = null;
-    // Size of receive buffer.
-    public const int BufferSize = 1024;
-    // Receive buffer.
-    public byte[] buffer = new byte[BufferSize];
-// Received data string.
-    public StringBuilder sb = new StringBuilder();  
+	public Socket workSocket = null;
+	public const int BufferSize = 1024;
+	public byte[] buffer = new byte[BufferSize];
+	public StringBuilder sb = new StringBuilder();  
 }
 
 public class AsynchronousSocketListener {
@@ -129,7 +170,7 @@ public class AsynchronousSocketListener {
     }
     
     private static void Send(Socket handler, String data) {
-        // Convert the string data to byte data using ASCII encoding.
+        / / Convert the string data to byte data using ASCII encoding.
         byte[] byteData = Encoding.ASCII.GetBytes(data);
 
         // Begin sending the data to the remote device.
@@ -160,4 +201,3 @@ public class AsynchronousSocketListener {
         return 0;
     }
 }
-﻿
