@@ -8,6 +8,15 @@ using System.Threading;
 
 namespace doe
 
+// Registered Client
+public class Service {
+        public int id = 0;
+        public Socket socket = null;
+        public string name = "";
+        public string description = "";
+        public Service() {
+        }
+}
 // State object for reading client data asynchronously
 public class StateObject {
     // Client  socket.
