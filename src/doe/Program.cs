@@ -56,43 +56,38 @@ public class Service {
 
 // List of registered clients
 [XmlRoot("ServiceList")]
-public class ServiceList {
-	private ArrayList listService;
+public class ServiceManager {
+	private ArrayList serviceList;
 	
-	public ServiceList() {
-		listService = new ArrayList();
+	public ServiceManager() {
+		serviceList = new ArrayList();
 	}
 
 	[XmlElement("Service")]
 	public Service[] Services {
 		get {
-			Service[] services = new Service[ listService.Count() ];
-			listService.CopyTo( services );
+			Service[] services = new Service[ serviceList.Count() ];
+			serviceList.CopyTo( services );
 			return services;
 		}
 		set {
 			if( value==null ) return;
 			Service[] services = (Item[])value;
-			listService.Clear();
+			serviceList.Clear();
 			foreach( Service service in services )
-				listService.Add( service );
+				serviceList.Add( service );
 		}
 	}
 
-	public int AddService( Service service ) {
-		return listService.Add( service );
+	public int Register( Service service ) {
+		return serviceList.Add( service );
+	}
+
+	public int Update( Service service ) {
 	}
 
 }
-
-public class ServiceManager {
-	public int id;
-	public ServiceList services;
-	public string Register( Service service ) {
-		id = services.AddService( service );
-		return "Service registered";
-	}
-}
+	
 
 // State object for reading client data asynchronously
 public class StateObject {
