@@ -10,6 +10,28 @@ using System.Xml.Serialization;
 
 namespace doe
 
+// Vertex in the graph
+public class Node {
+	public int id = 0;
+	public int dimension = 3;
+	public int[] size = [0,0,0];
+	public Node() {
+	}
+	public Node(int nodeDimension, int[] nodeSize) {
+		dimension = nodeDimension;
+		size = nodeSize;
+	}
+	public void Resize(int[] newSize) {
+		size = newSize;
+	}
+}
+
+// Graph to be optimized
+public class MetricSpace {
+	public int dimension = 3;
+	public int[] size = [0,0,0];
+}
+
 // Registered client
 public class Service {
         [XmlAttribute("id")] public int id = 0;
@@ -27,11 +49,12 @@ public class Service {
 	}
 
 	public bool Query(String query) {
-		if ((name.IndexOf(query) > -1) || (description.IndexOf(query) > -1)) return True;
-		else return False;
+		if ((name.IndexOf(query) > -1) || (description.IndexOf(query) > -1)) return true;
+		else return false;
 	}
 }
 
+// List of registered clients
 [XmlRoot("ServiceList")]
 public class ServiceList {
 	private ArrayList listService;
@@ -60,6 +83,15 @@ public class ServiceList {
 		return listService.Add( service );
 	}
 
+}
+
+public class ServiceManager {
+	public int id;
+	public ServiceList services;
+	public string Register( Service service ) {
+		id = services.AddService( service );
+		return "Service registered";
+	}
 }
 
 // State object for reading client data asynchronously
