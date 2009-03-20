@@ -5,6 +5,8 @@
     <title>Doe</title>
     <link rel="stylesheet" type="text/css" media="screen" title="Basic"
         href="media/style.css">
+	<script src="scripts/prototype.js" type="text/javascript"></script>
+	<script src="scripts/scriptaculous.js" type="text/javascript"></script>
 	<script src="scripts/cufon-yui.js" type="text/javascript"></script>
 	<script src="scripts/Diavlo_Black_900.font.js" type="text/javascript"></script>
 	<script type="text/javascript">
@@ -13,19 +15,37 @@
    </head>
 
   <body>
-	<h1>Doe</h1>
-  	<div id="menu">
-		Create Personalise Learn 
+	<div id="container">
+  	<div id="menubar">
+		<div id="logo">
+			<h1>Doe</h1>
+		</div>
+		<div id="menu">
+			Create, Personalise, Learn 
+		</div>
 	</div>
 	<div id="context">
-		Sample latin text goes here
+		<ul id="panellist">
+			<li>Plugins</li>
+			<li>Objects</li>
+		</ul>
 	</div>
 	<div id="plugins">
+		<ul id="pluginlist">
+			<li>works</li>
+			<li>this</li>
+			<li>Yay</li>
+			<li>now</li>
+		</ul>
+		<script type="text/javascript">
+			Sortable.create("pluginlist");
+		</script>
 	</div>
 	<div id="objects">
 	</div>
 	<div id="workspace">
 		<a href="submit">update</a>
+	</div>
 	</div>
   </body> 
 </html>

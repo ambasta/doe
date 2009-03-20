@@ -1,19 +1,32 @@
 body{
-	text-align:center;
+	text-align:left;
+	font-family:'GillSans-Light','Gill Sans Light',Helvetica,Arial,sans-serif;
 	}
-
-#menu{
+#container{
+	width:100%;
+}
+#menubar{
 	background-color:#506266;
-	height:10em;
 	width:100%;
 	float:left;
 }
+#logo{
+	float:left;
+	padding-left:2em;
+	padding-right:1.6em;
+}
+#menu{
+	color:#BCC499;
+	padding-top:2.2em;
+	line-height:normal;
+}
 #context{
 	background-color:#7B8F8A;
-	height:8em;
-	width:100%;
+	line-height:1.5em;
+	padding-left:2em;
 	float:left;
 	clear:left;
+	width:100%;
 }
 #workspace{
 	background-color:#FFFFFF;
@@ -21,6 +34,10 @@ body{
 	border:black;
 	float:left;
 	clear:left;
+}
+h1{
+	color:#F5DD9D;
+	size:2em;
 }
 a{
 	color:#000;
