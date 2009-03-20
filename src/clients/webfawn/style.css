@@ -1,15 +1,24 @@
 body{
 	text-align:center;
 	}
-#menu
-#cartoon{
-	margin:auto;
-	padding-top:100px;
-	padding-bottom:10px;
-	}
-img{
-	width:42em;
-	}
+
+#menu{
+	background-color:#506266;
+	height:10em;
+	float:left;
+}
+#context{
+	background-color:#7B8F8A;
+	height:8em;
+	float:left;
+	clear:left;
+}
+#workspace{
+	background-color:#FFFFFF;
+	height:10em;
+	float:left;
+	clear:left;
+}
 a{
 	color:#000;
 	font-family:Helvetica,Arial,sans-serif;
