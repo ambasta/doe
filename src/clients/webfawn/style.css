@@ -5,17 +5,20 @@ body{
 #menu{
 	background-color:#506266;
 	height:10em;
+	width:100%;
 	float:left;
 }
 #context{
 	background-color:#7B8F8A;
 	height:8em;
+	width:100%;
 	float:left;
 	clear:left;
 }
 #workspace{
 	background-color:#FFFFFF;
 	height:10em;
+	border:black;
 	float:left;
 	clear:left;
 }
