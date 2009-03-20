@@ -8,7 +8,7 @@ body{
 }
 #menubar{
 	background-color:#506266;
-	width:100%;
+	width:1000px;
 	float:left;
 	opacity:0.9;
 }
@@ -22,7 +22,7 @@ body{
 	color:#BCC499;
 	line-height:normal;
 }
-#context{
+#ribbon{
 	color:#F5DD9D;
 	background-color:#7B8F8A;
 	opacity:0.8;
@@ -30,7 +30,7 @@ body{
 	padding-left:2em;
 	float:left;
 	clear:left;
-	width:100%;
+	width:1000px;
 }
 #plugins{
 	background-color:#000000;
@@ -40,10 +40,17 @@ body{
 	float:left;
 	clear:left;
 }
+#objects{
+	background-color:#000000;
+	opacity:0.7;
+	padding:1em;
+	color:#BCC499;
+	float:left;
+}
 #workspace{
 	background-color:#000000;
 	opacity:0.5;
-	width:800px;
+	width:700px;
 	height:600em;
 	float:left;
 }

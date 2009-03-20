@@ -24,10 +24,11 @@
 			Create, Personalise, Learn 
 		</div>
 	</div>
-	<div id="context">
-		<ul id="panellist">
-			<li><a href="#" onclick="Effect.SlideDown('pluginlist'); return false;">Plugins</a></li>
-			<li>Objects</li>
+	<div id="ribbon">
+		<div id="message">
+			Hi!  Welcome to Doe, have fun.
+		</div>
+		<ul id="context">
 		</ul>
 	</div>
 	<div id="plugins">
@@ -36,14 +37,21 @@
 			<li>Schedule</li>
 			<li>Proximity</li>
 			<li>Etc</li>
-			<li><a href="#" onclick="Effect.SlideUp('pluginlist'); return false;">Hide</a></li>
 		</ul>
 		<script type="text/javascript">
 			Sortable.create("pluginlist");
 		</script>
 	</div>
 	<div id="objects">
-	</div>
+		<ul id="objectlist">
+			<li>Garbage Dump</li>
+			<li>Residential Complex</li>
+			<li>Rice Field</li>
+			<li>Etc</li>
+		</ul>
+		<script type="text/javascript">
+			Sortable.create("pluginlist");
+		</script></div>
 	<div id="workspace">
 		<a href="submit">update</a>
 	</div>
