@@ -26,16 +26,17 @@
 	</div>
 	<div id="context">
 		<ul id="panellist">
-			<li>Plugins</li>
+			<li><a href="#" onclick="Effect.SlideDown('pluginlist'); return false;">Plugins</a></li>
 			<li>Objects</li>
 		</ul>
 	</div>
 	<div id="plugins">
 		<ul id="pluginlist">
-			<li>works</li>
-			<li>this</li>
-			<li>Yay</li>
-			<li>now</li>
+			<li>Arrange</li>
+			<li>Schedule</li>
+			<li>Proximity</li>
+			<li>Etc</li>
+			<li><a href="#" onclick="Effect.SlideUp('pluginlist'); return false;">Hide</a></li>
 		</ul>
 		<script type="text/javascript">
 			Sortable.create("pluginlist");

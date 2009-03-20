@@ -1,14 +1,16 @@
 body{
 	text-align:left;
 	font-family:'GillSans-Light','Gill Sans Light',Helvetica,Arial,sans-serif;
-	}
+	background:url('background.jpg') no-repeat;
+}
 #container{
-	width:100%;
+	width:1024px;
 }
 #menubar{
 	background-color:#506266;
 	width:100%;
 	float:left;
+	opacity:0.9;
 }
 #logo{
 	float:left;
@@ -16,35 +18,57 @@ body{
 	padding-right:1.6em;
 }
 #menu{
-	color:#BCC499;
 	padding-top:2.2em;
+	color:#BCC499;
 	line-height:normal;
 }
 #context{
+	color:#F5DD9D;
 	background-color:#7B8F8A;
+	opacity:0.8;
 	line-height:1.5em;
 	padding-left:2em;
 	float:left;
 	clear:left;
 	width:100%;
 }
-#workspace{
-	background-color:#FFFFFF;
-	height:10em;
-	border:black;
+#plugins{
+	background-color:#000000;
+	opacity:0.7;
+	padding:1em;
+	color:#BCC499;
 	float:left;
 	clear:left;
 }
+#workspace{
+	background-color:#000000;
+	opacity:0.5;
+	width:800px;
+	height:600em;
+	float:left;
+}
 h1{
-	color:#F5DD9D;
 	size:2em;
+	color:#F5DD9D;
+}
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ul li{
+	padding-right:1em;
+	float:left;
+}
+ul#pluginlist li, ul#objectlist li{
+	clear:left;
 }
 a{
 	color:#000;
 	font-family:Helvetica,Arial,sans-serif;
 	text-decoration:none;
-	}
+}
 a:hover, a:focus{
 	 text-decoration:underline;
-	 }
+}
 	
