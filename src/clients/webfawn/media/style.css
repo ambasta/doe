@@ -4,11 +4,11 @@ body{
 	background:url('background.jpg') no-repeat;
 }
 #container{
-	width:1024px;
+	width:100%;
 }
 #menubar{
 	background-color:#506266;
-	width:1000px;
+	width:100%;
 	float:left;
 	opacity:0.9;
 }
@@ -27,12 +27,15 @@ body{
 	background-color:#7B8F8A;
 	opacity:0.8;
 	line-height:1.5em;
-	padding-left:2em;
 	float:left;
 	clear:left;
-	width:1000px;
+	width:100%;
+}
+#message{
+	padding-left:2em;
 }
 #plugins{
+	width:10%;
 	background-color:#000000;
 	opacity:0.7;
 	padding:1em;
@@ -41,6 +44,7 @@ body{
 	clear:left;
 }
 #objects{
+	width:20%;
 	background-color:#000000;
 	opacity:0.7;
 	padding:1em;
@@ -50,7 +54,7 @@ body{
 #workspace{
 	background-color:#000000;
 	opacity:0.5;
-	width:700px;
+	width:60%;
 	height:600em;
 	float:left;
 }
