@@ -3,8 +3,9 @@ using System.Text;
 using System.Net.Sockets;
 using System.Threading;
 using System.Net;
+using System.Xml;
 
-namespace doe
+namespace doe.Engine
 {
     class Server
     {
@@ -110,11 +111,12 @@ namespace doe
         }
     }
 
-    class Program
+    class Doe
     {
+
         public static void Main(String[] args)
         {
-            Thread myThread;
+            /*Thread myThread;
             int val = Int32.Parse(Console.ReadLine());
             if (val == 1)
             {
@@ -127,7 +129,7 @@ namespace doe
                 myThread = new Thread(new ThreadStart(myclient.connect));
             }
 
-            myThread.Start();
+            myThread.Start();*/
         }
     }
 }
