@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Plugins>
 	<PlugName> Proximity </PlugName>
+  <PlugLocation> Plugins/proximity.dll </PlugLocation>
+  <PlugIco> Plugins/Icons/proximity.ico </PlugIco>
 	<PlugVer> 2.2 </PlugVer>
 	<Stage> 1 </Stage>
 	<InputSection>
@@ -11,6 +13,8 @@
 	</InputSection>
 
 	<PlugName> Area </PlugName>
+  <PlugLocation> Plugins/area.dll </PlugLocation>
+  <PlugIco> Plugins/Icons/area.ico </PlugIco>
 	<PlugVer> 1.2 </PlugVer>
 	<Stage> 1 </Stage>
 	<InputSection>
