@@ -9,6 +9,7 @@
               <xs:element name="PlugName" type="xs:string" />
               <xs:element name="PlugLocation" type="xs:string" />
               <xs:element name="PlugIco" type="xs:string" />
+              <xs:element name="PlugCompat" type="xs:decimal" />
               <xs:element name="PlugVer" type="xs:decimal" />
               <xs:element name="Stage" type="xs:unsignedByte" />
               <xs:element name="InputSection">

@@ -4,47 +4,48 @@
     <PlugName> Proximity </PlugName>
     <PlugLocation> Plugins/proximity.dll </PlugLocation>
     <PlugIco> Plugins/Icons/proximity.ico </PlugIco>
-	  <PlugVer> 2.2 </PlugVer>
-	  <Stage> 1 </Stage>
-	  <InputSection>
-		  <Input>
+    <PlugCompat> 1.7 </PlugCompat>
+    <PlugVer> 2.2 </PlugVer>
+    <Stage> 1 </Stage>
+    <InputSection>
+      <Input>
         <Name> From </Name>
         <Type> Div </Type>
       </Input>
-		  <Input>
+      <Input>
         <Name> To </Name>
         <Type> Div </Type>
       </Input>
-		  <Input>
+      <Input>
         <Name> Weight </Name>
         <Type> Zinteger </Type>
       </Input>
-		  <Input>
+      <Input>
         <Name> Type </Name>
         <Type> Boolean </Type>
       </Input>
-	  </InputSection>
+    </InputSection>
   </Plugin>
-
   <Plugin>
-	  <PlugName> Area </PlugName>
+    <PlugName> Area </PlugName>
     <PlugLocation> Plugins/area.dll </PlugLocation>
     <PlugIco> Plugins/Icons/area.ico </PlugIco>
-	  <PlugVer> 1.2 </PlugVer>
-	  <Stage> 1 </Stage>
-	  <InputSection>
-	    <Input>
+    <PlugCompat> 1.0 </PlugCompat>
+    <PlugVer> 1.2 </PlugVer>
+    <Stage> 1 </Stage>
+    <InputSection>
+      <Input>
         <Name> Area Of </Name>
         <Type> Div </Type>
       </Input>
-	    <Input>
+      <Input>
         <Name> Length </Name>
         <Type> Pinteger </Type>
       </Input>
-	    <Input>
+      <Input>
         <Name> Width </Name>
         <Type> Pinteger </Type>
       </Input>
-	  </InputSection>
-    </Plugin>
+    </InputSection>
+  </Plugin>
 </Plugins>
