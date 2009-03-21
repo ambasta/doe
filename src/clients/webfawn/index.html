@@ -18,18 +18,33 @@
 	<div id="container">
   	<div id="menubar">
 		<div id="logo">
-			<h1>Doe</h1>
+			<a href="#" onclick="$('context').fade(); $('message').appear(); return false;"><h1>Doe</h1></a>
 		</div>
 		<div id="menu">
-			Create, Personalise, Learn 
+			<a href="#" onclick="$('message').fade(); $('createList').appear(); return false;">Create</a>, 
+			<a href="#" onclick="$('message').fade(); $('personaliseList').appear(); return false;">Personalise</a>, 
+			<a href="#" onclick="$('message').fade(); $('learnList').appear(); return false;">Learn</a> 
 		</div>
 	</div>
 	<div id="ribbon">
 		<div id="message">
 			Hi!  Welcome to Doe, have fun.
 		</div>
-		<ul id="context">
-		</ul>
+		<div id="context">
+			<ul id="createList" style="display:none">
+				<li>Project</li>
+				<li>Object</li>
+				<li>Session</li>
+			</ul>
+			<ul id="personaliseList" style="display:none">
+				<li>Client</li>
+				<li>Server</li>
+				<li>Logs</li>
+			</ul>
+			<ul id="learnList" style="display:none">
+				<li>More</li>
+			</ul>
+		</div>
 	</div>
 	<div id="plugins">
 		<ul id="pluginlist">
@@ -38,9 +53,6 @@
 			<li>Proximity</li>
 			<li>Etc</li>
 		</ul>
-		<script type="text/javascript">
-			Sortable.create("pluginlist");
-		</script>
 	</div>
 	<div id="objects">
 		<ul id="objectlist">
@@ -49,12 +61,14 @@
 			<li>Rice Field</li>
 			<li>Etc</li>
 		</ul>
-		<script type="text/javascript">
-			Sortable.create("pluginlist");
-		</script></div>
+	</div>
 	<div id="workspace">
 		<a href="submit">update</a>
 	</div>
+	<script type="text/javascript">
+		Sortable.create("pluginlist");
+		Sortable.create("objectlist", {containment:['objectlist', 'pluginlist']});
+	</script>					 
 	</div>
   </body> 
 </html>

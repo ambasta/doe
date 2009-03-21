@@ -27,11 +27,12 @@ body{
 	background-color:#7B8F8A;
 	opacity:0.8;
 	line-height:1.5em;
+	height:1.5em;
 	float:left;
 	clear:left;
 	width:100%;
 }
-#message{
+#message, #context{
 	padding-left:2em;
 }
 #plugins{
@@ -55,7 +56,7 @@ body{
 	background-color:#000000;
 	opacity:0.5;
 	width:60%;
-	height:600em;
+	height:30em;
 	float:left;
 }
 h1{
@@ -72,14 +73,16 @@ ul li{
 	float:left;
 }
 ul#pluginlist li, ul#objectlist li{
+	background-color:#000;
 	clear:left;
 }
 a{
-	color:#000;
+	color:#BCC499;
 	font-family:Helvetica,Arial,sans-serif;
 	text-decoration:none;
 }
 a:hover, a:focus{
-	 text-decoration:underline;
+	color:#F5DD9D;
+	text-decoration:underline;
 }
 	
