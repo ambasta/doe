@@ -1,0 +1,7 @@
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Core\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Core\bin\Debug\Core.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Core\bin\Debug\Core.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Core\obj\Debug\Core.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Core\obj\Debug\Core.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Core\bin\Debug\PlugBase.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Core\bin\Debug\PlugBase.pdb

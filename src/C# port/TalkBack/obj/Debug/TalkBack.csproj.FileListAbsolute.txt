@@ -1,0 +1,13 @@
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\TalkBack\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\TalkBack\bin\Debug\TalkBack.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\TalkBack\bin\Debug\TalkBack.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\TalkBack\bin\Debug\Exceptions.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\TalkBack\bin\Debug\mXMLHandler.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\TalkBack\bin\Debug\Exceptions.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\TalkBack\bin\Debug\mXMLHandler.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\TalkBack\obj\Debug\TalkBack.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\TalkBack\obj\Debug\TalkBack.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\TalkBack\bin\Debug\PlugBase.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\TalkBack\bin\Debug\PlugBase.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\TalkBack\bin\Debug\Core.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\TalkBack\bin\Debug\Core.pdb

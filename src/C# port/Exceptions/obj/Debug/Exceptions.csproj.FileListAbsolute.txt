@@ -1,0 +1,5 @@
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Exceptions\bin\Debug\Exceptions.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Exceptions\bin\Debug\Exceptions.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Exceptions\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Exceptions\obj\Debug\Exceptions.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Exceptions\obj\Debug\Exceptions.pdb

@@ -1,8 +1,15 @@
-C:\Users\Amit Prakash Ambasta\Imagine\doe\src\devel\Doe\Doe\bin\Debug\Doe.exe
-C:\Users\Amit Prakash Ambasta\Imagine\doe\src\devel\Doe\Doe\bin\Debug\Doe.pdb
-C:\Users\Amit Prakash Ambasta\Imagine\doe\src\devel\Doe\Doe\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Amit Prakash Ambasta\Imagine\doe\src\devel\Doe\Doe\obj\Debug\Doe.exe
-C:\Users\Amit Prakash Ambasta\Imagine\doe\src\devel\Doe\Doe\obj\Debug\Doe.pdb
-C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Doe\obj\Debug\Doe.exe
-C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Doe\obj\Debug\Doe.pdb
-C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Doe\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\bin\Debug\Doe.exe
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\bin\Debug\Doe.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\bin\Debug\Exceptions.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\bin\Debug\mXMLHandler.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\bin\Debug\TalkBack.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\bin\Debug\Exceptions.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\bin\Debug\TalkBack.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\bin\Debug\mXMLHandler.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\obj\Debug\Doe.exe
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\obj\Debug\Doe.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\bin\Debug\PlugBase.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\bin\Debug\PlugBase.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\bin\Debug\Core.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\Doe\bin\Debug\Core.pdb

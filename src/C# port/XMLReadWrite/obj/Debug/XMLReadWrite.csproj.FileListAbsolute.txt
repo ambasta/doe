@@ -1,6 +1,0 @@
-C:\Users\Amit Prakash Ambasta\Imagine\doe\src\devel\Doe\XMLReadWrite\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\XMLReadWrite\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\XMLReadWrite\bin\Debug\XMLReadWrite.dll
-C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\XMLReadWrite\bin\Debug\XMLReadWrite.pdb
-C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\XMLReadWrite\obj\Debug\XMLReadWrite.dll
-C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\XMLReadWrite\obj\Debug\XMLReadWrite.pdb
