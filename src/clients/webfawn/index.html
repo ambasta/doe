@@ -11,6 +11,17 @@
 	<script src="scripts/Diavlo_Black_900.font.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		Cufon.replace('h1');
+		current = 'message';
+		new Draggable('arrange', { ghosting: 'true', handle: 'handle' });
+		new Draggable('schedule', { ghosting: 'true', handle: 'handle' });
+		new Draggable('garbage', { ghosting: 'true', handle: 'handle' });
+		new Draggable('building', { ghosting: 'true', handle: 'handle' });
+		function display(context)
+		{
+			$(current).fade({duration:0.2, queue:{position:'end',scope:'display'}});
+			$(context).appear({duration:0.2, queue:{position:'end',scope:'display'}});
+			current = context;
+		}
 	</script>
    </head>
 
@@ -18,17 +29,17 @@
 	<div id="container">
   	<div id="menubar">
 		<div id="logo">
-			<a href="#" onclick="$('context').fade(); $('message').appear(); return false;"><h1>Doe</h1></a>
+			<a href="#" onclick="display('message');"><h1>Doe</h1></a>
 		</div>
 		<div id="menu">
-			<a href="#" onclick="$('message').fade(); $('createList').appear(); return false;">Create</a>, 
-			<a href="#" onclick="$('message').fade(); $('personaliseList').appear(); return false;">Personalise</a>, 
-			<a href="#" onclick="$('message').fade(); $('learnList').appear(); return false;">Learn</a> 
+			<a href="#" onclick="display('createList');">Create</a>, 
+			<a href="#" onclick="display('personaliseList');">Personalise</a>, 
+			<a href="#" onclick="display('learnList');">Learn</a> 
 		</div>
 	</div>
 	<div id="ribbon">
 		<div id="message">
-			Hi!  Welcome to Doe, have fun.
+			Hi!  Welcome to the Development Optimisation Engine. Have fun.
 		</div>
 		<div id="context">
 			<ul id="createList" style="display:none">
@@ -61,12 +72,7 @@
 	<div id="workspace">
 		<a href="submit">update</a>
 	</div>
-	<script type="text/javascript">
-		new Draggable('arrange', { ghosting: 'true', handle: 'handle' });
-		new Draggable('schedule', { ghosting: 'true', handle: 'handle' });
-		new Draggable('garbage', { ghosting: 'true', handle: 'handle' });
-		new Draggable('building', { ghosting: 'true', handle: 'handle' });
-	</script>					 
+				 
 	</div>
   </body> 
 </html>

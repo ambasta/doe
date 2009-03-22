@@ -51,8 +51,7 @@ body{
 	float:left;
 }
 #workspace{
-	background-color:#000000;
-	opacity:0.5;
+	background-color:rgba(0,0,0,0.5);
 	width:60%;
 	height:30em;
 	float:left;
@@ -71,6 +70,8 @@ ul li{
 	float:left;
 }
 ul#pluginlist li, ul#objectlist li{
+	padding-bottom:2em;
+	text-align:center;
 	clear:left;
 }
 a{
