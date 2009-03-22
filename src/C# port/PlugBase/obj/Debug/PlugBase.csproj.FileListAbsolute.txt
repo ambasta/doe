@@ -3,3 +3,8 @@ C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\PlugBase\bin\Debug\PlugBa
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\PlugBase\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\PlugBase\obj\Debug\PlugBase.dll
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\PlugBase\obj\Debug\PlugBase.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\PlugBase\bin\Debug\PlugBase.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\PlugBase\bin\Debug\PlugBase.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\PlugBase\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\PlugBase\obj\Debug\PlugBase.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\PlugBase\obj\Debug\PlugBase.pdb

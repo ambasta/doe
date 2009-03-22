@@ -5,3 +5,10 @@ C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\mXMLHandler\bin\Debug\Exc
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\mXMLHandler\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\mXMLHandler\obj\Debug\mXMLHandler.dll
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\beta\Doe\mXMLHandler\obj\Debug\mXMLHandler.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\mXMLHandler\bin\Debug\mXMLHandler.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\mXMLHandler\bin\Debug\mXMLHandler.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\mXMLHandler\bin\Debug\Exceptions.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\mXMLHandler\bin\Debug\Exceptions.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\mXMLHandler\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\mXMLHandler\obj\Debug\mXMLHandler.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\mXMLHandler\obj\Debug\mXMLHandler.pdb

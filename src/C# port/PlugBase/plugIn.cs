@@ -9,7 +9,7 @@ namespace Doe.PlugBase
     {
         #region Methods
         void properties(String[] mat);
-        int score(int[][] mat);
+        int score(int[,] mat);
         #endregion
     }
 }

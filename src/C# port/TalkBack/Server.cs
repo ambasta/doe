@@ -74,6 +74,8 @@ namespace Doe.TalkBack
                 switch (mode)
                 {
                     case 3:
+                        message = encoder.GetBytes("Accepted");
+                        clientStream.Write(message, 0, message.Length);
                         block(clientStream);
                         break;
                     default:
