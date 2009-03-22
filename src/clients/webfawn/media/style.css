@@ -37,8 +37,7 @@ body{
 }
 #plugins{
 	width:10%;
-	background-color:#000000;
-	opacity:0.7;
+	background-color:rgba(0,0,0,0.8);
 	padding:1em;
 	color:#BCC499;
 	float:left;
@@ -46,8 +45,7 @@ body{
 }
 #objects{
 	width:20%;
-	background-color:#000000;
-	opacity:0.7;
+	background-color:rgba(0,0,0,0.7);
 	padding:1em;
 	color:#BCC499;
 	float:left;
@@ -73,7 +71,6 @@ ul li{
 	float:left;
 }
 ul#pluginlist li, ul#objectlist li{
-	background-color:#000;
 	clear:left;
 }
 a{

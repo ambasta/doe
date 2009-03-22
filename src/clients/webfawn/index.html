@@ -48,26 +48,24 @@
 	</div>
 	<div id="plugins">
 		<ul id="pluginlist">
-			<li>Arrange</li>
-			<li>Schedule</li>
-			<li>Proximity</li>
-			<li>Etc</li>
+			<li><div id="arrange"><img src='media/icons/64x64/plan.png'><br>Arrange</div></li>
+			<li><div id="schedule"><img src='media/icons/64x64/schedule.png'><br>Schedule</div></li>
 		</ul>
 	</div>
 	<div id="objects">
 		<ul id="objectlist">
-			<li>Garbage Dump</li>
-			<li>Residential Complex</li>
-			<li>Rice Field</li>
-			<li>Etc</li>
+			<li><div id="garbage"><img src='media/icons/64x64/trash.png'><br>Garbage</div></li>
+			<li><div id="building"><img src='media/icons/64x64/home.png'><br>Building</div></li>
 		</ul>
 	</div>
 	<div id="workspace">
 		<a href="submit">update</a>
 	</div>
 	<script type="text/javascript">
-		Sortable.create("pluginlist");
-		Sortable.create("objectlist", {containment:['objectlist', 'pluginlist']});
+		new Draggable('arrange', { ghosting: 'true', handle: 'handle' });
+		new Draggable('schedule', { ghosting: 'true', handle: 'handle' });
+		new Draggable('garbage', { ghosting: 'true', handle: 'handle' });
+		new Draggable('building', { ghosting: 'true', handle: 'handle' });
 	</script>					 
 	</div>
   </body> 
