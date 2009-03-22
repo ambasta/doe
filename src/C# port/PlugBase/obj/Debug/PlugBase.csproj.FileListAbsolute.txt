@@ -1,8 +1,8 @@
-C:\Users\Amit Prakash Ambasta\Imagine\doe\PlugBase\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Amit Prakash Ambasta\Imagine\doe\PlugBase\bin\Debug\PlugBase.dll
-C:\Users\Amit Prakash Ambasta\Imagine\doe\PlugBase\bin\Debug\PlugBase.pdb
-C:\Users\Amit Prakash Ambasta\Imagine\doe\PlugBase\obj\Debug\PlugBase.dll
-C:\Users\Amit Prakash Ambasta\Imagine\doe\PlugBase\obj\Debug\PlugBase.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\devel\Doe\PlugBase\bin\Debug\PlugBase.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\devel\Doe\PlugBase\bin\Debug\PlugBase.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\devel\Doe\PlugBase\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\devel\Doe\PlugBase\obj\Debug\PlugBase.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\devel\Doe\PlugBase\obj\Debug\PlugBase.pdb
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\PlugBase\bin\Debug\PlugBase.dll
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\PlugBase\bin\Debug\PlugBase.pdb
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\PlugBase\obj\Debug\ResolveAssemblyReference.cache

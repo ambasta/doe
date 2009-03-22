@@ -5,7 +5,7 @@ using System.Threading;
 using System.Net;
 using System.Xml;
 
-namespace doe.Engine
+namespace Doe.Engine
 {
     class Server
     {
@@ -38,7 +38,7 @@ namespace doe.Engine
                 }
 
                 ASCIIEncoding encode = new ASCIIEncoding();
-                Console.WriteLine("Server: Read "+readbytes +" bytes. Message: "+encode.GetString(message, 0, readbytes));
+                Console.WriteLine("Server: Read " + readbytes + " bytes. Message: " + encode.GetString(message, 0, readbytes));
                 clientStream.Write(message, 0, readbytes);
                 clientStream.Flush();
                 if (encode.GetString(message, 0, readbytes).Equals("End"))
@@ -60,7 +60,7 @@ namespace doe.Engine
 
         public Server()
         {
-            tcpListener = new TcpListener(IPAddress.Any, 3000);            
+            tcpListener = new TcpListener(IPAddress.Any, 3000);
         }
 
     }
@@ -88,7 +88,7 @@ namespace doe.Engine
                 Console.WriteLine("Client: Connection failed");
                 Environment.Exit(0);
             }
-            
+
             NetworkStream clientStream = client.GetStream();
             while (true)
             {
@@ -99,7 +99,7 @@ namespace doe.Engine
                 clientStream.Write(buffer, 0, buffer.Length);
                 buffer = new byte[4096];
                 int blen = clientStream.Read(buffer, 0, 4096);
-                Console.WriteLine("Client: Read "+blen+" bytes. Message: " +encoder.GetString(buffer, 0, blen));
+                Console.WriteLine("Client: Read " + blen + " bytes. Message: " + encoder.GetString(buffer, 0, blen));
                 clientStream.Flush();
                 if (encoder.GetString(buffer, 0, blen).Equals("end"))
                 {

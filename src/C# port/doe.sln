@@ -1,20 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine.csproj", "{326EB02A-72BF-4824-B18B-D04C6D153A7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Doe\Engine.csproj", "{53A04773-9DFD-4BD9-94ED-744341273BCB}"
 	ProjectSection(ProjectDependencies) = postProject
-		{7052F8E3-749F-42CD-A8A3-2941C92B7AA3} = {7052F8E3-749F-42CD-A8A3-2941C92B7AA3}
+		{D591AC05-A569-4E95-9216-B1D9A71E94E7} = {D591AC05-A569-4E95-9216-B1D9A71E94E7}
+		{5323E017-F228-45AB-8970-45E8F5BB3CB6} = {5323E017-F228-45AB-8970-45E8F5BB3CB6}
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FB5EDE99-CE87-4A4F-96FA-782ADE99B350}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlugBase", "PlugBase\PlugBase.csproj", "{5323E017-F228-45AB-8970-45E8F5BB3CB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLReadWrite", "XMLReadWrite\XMLReadWrite.csproj", "{D591AC05-A569-4E95-9216-B1D9A71E94E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XML", "XML", "{653A8962-28F1-4864-B35A-92B0DEE2C1B0}"
 	ProjectSection(SolutionItems) = preProject
 		Model.txt = Model.txt
-		XMLex.xml = XMLex.xml
+		plugConf.xml = plugConf.xml
+		plugConf.xsd = plugConf.xsd
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlugBase", "PlugBase\PlugBase.csproj", "{7052F8E3-749F-42CD-A8A3-2941C92B7AA3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLReadWrite", "XMLReadWrite\XMLReadWrite.csproj", "{B0DAFD0C-6068-46D8-9229-EE9C0F2D7B62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,18 +24,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{326EB02A-72BF-4824-B18B-D04C6D153A7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{326EB02A-72BF-4824-B18B-D04C6D153A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{326EB02A-72BF-4824-B18B-D04C6D153A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{326EB02A-72BF-4824-B18B-D04C6D153A7A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7052F8E3-749F-42CD-A8A3-2941C92B7AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7052F8E3-749F-42CD-A8A3-2941C92B7AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7052F8E3-749F-42CD-A8A3-2941C92B7AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7052F8E3-749F-42CD-A8A3-2941C92B7AA3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B0DAFD0C-6068-46D8-9229-EE9C0F2D7B62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0DAFD0C-6068-46D8-9229-EE9C0F2D7B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0DAFD0C-6068-46D8-9229-EE9C0F2D7B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0DAFD0C-6068-46D8-9229-EE9C0F2D7B62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53A04773-9DFD-4BD9-94ED-744341273BCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53A04773-9DFD-4BD9-94ED-744341273BCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53A04773-9DFD-4BD9-94ED-744341273BCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53A04773-9DFD-4BD9-94ED-744341273BCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5323E017-F228-45AB-8970-45E8F5BB3CB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5323E017-F228-45AB-8970-45E8F5BB3CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5323E017-F228-45AB-8970-45E8F5BB3CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5323E017-F228-45AB-8970-45E8F5BB3CB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D591AC05-A569-4E95-9216-B1D9A71E94E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D591AC05-A569-4E95-9216-B1D9A71E94E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D591AC05-A569-4E95-9216-B1D9A71E94E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D591AC05-A569-4E95-9216-B1D9A71E94E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

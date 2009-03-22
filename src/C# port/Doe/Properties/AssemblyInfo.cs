@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Resources;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("doe")]
+[assembly: AssemblyTitle("Doe")]
 [assembly: AssemblyDescription("Dynamic Optimization Engine")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("whoami")]
-[assembly: AssemblyProduct("doe")]
+[assembly: AssemblyProduct("Doe")]
 [assembly: AssemblyCopyright("Copyright ©  2009")]
 [assembly: AssemblyTrademark("Tough Luck, I suck, whoami, CMI")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +20,7 @@ using System.Resources;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8603c618-e34e-4927-ade0-99c4e2f6d5e6")]
+[assembly: Guid("0c9bf3e5-74bc-4c1e-9ef7-6f16b86fa163")]
 
 // Version information for an assembly consists of the following four values:
 //

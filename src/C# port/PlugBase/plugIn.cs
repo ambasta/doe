@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace doe.PlugBase
+namespace Doe.PlugBase
 {
     public interface plugIn
     {
