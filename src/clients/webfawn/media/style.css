@@ -5,6 +5,7 @@ body{
 }
 #container{
 	width:100%;
+	max-width:1000px;
 }
 #menubar{
 	background-color:#506266;
