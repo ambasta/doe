@@ -28,6 +28,7 @@ namespace Doe.TalkBack
 
         public void ListenForClients()
         {
+            Console.WriteLine("Listening for Clients");
             this.tcpListener.Start();
             while (true)
             {
@@ -41,7 +42,6 @@ namespace Doe.TalkBack
                 {
                     Console.WriteLine(e.ErrorMessage);
                 }
-                client.Close();
             }
         }
 
@@ -67,12 +67,16 @@ namespace Doe.TalkBack
 
                 if (readBytes == 0)
                 {
-                    throw new customException("Client Disconnected");
+                    Console.WriteLine("Client Disconnected");
+                    return;
                 }
 
                 int mode = Int32.Parse(encoder.GetString(message, 0, readBytes));
                 switch (mode)
                 {
+                    case 1:
+                        sendXml(clientStream);
+                        break;
                     case 3:
                         message = encoder.GetBytes("Accepted");
                         clientStream.Write(message, 0, message.Length);
@@ -84,6 +88,41 @@ namespace Doe.TalkBack
                         clientStream.Close();
                         break;
                 }
+            }
+            client.Close();
+        }
+
+        private void sendXml(NetworkStream clientStream)
+        {
+            FileStream fs = null;
+            try
+            {
+                fs = new FileStream("Config.xml", FileMode.Open, FileAccess.Read);
+                UInt64 fLen = (UInt64)fs.Length;
+
+                clientStream.Write(BitConverter.GetBytes(fLen), 0, 8);
+                int br = 0;
+                byte[] buff = new byte[4096];
+
+                do
+                {
+                    br = fs.Read(buff, 0, 4096);
+                    clientStream.Write(buff, 0, br);
+                } while (br == 4096);
+            }
+            catch (Exception e)
+            {
+                try
+                {
+                    fs.Close();
+                }
+                catch { }
+                try
+                {
+                    clientStream.Close();
+                }
+                catch { }
+                throw e;
             }
         }
 
@@ -125,47 +164,55 @@ namespace Doe.TalkBack
                 }
 
                 data = (String[])temp;
+                int dCount = 0;
                 foreach(String temper in data)
                 {
-                    String[] parsed = temper.Split('$');
-                    if (parsed[0].ToLower().Equals("plugin"))
+                    if (!temper.Equals(data[0]))
                     {
-                        if (!config.checkPlug(parsed[1]))
+                        String[] parsed = temper.Split('$');
+                        if (parsed[0].ToLower().Equals("plugin"))
                         {
-                            message = encoder.GetBytes("Invalid Plugin: " + parsed[1]);
+                            if (!config.checkPlug(parsed[1]))
+                            {
+                                message = encoder.GetBytes("Invalid Plugin: " + parsed[1]);
+                                clientStream.Write(message, 0, message.Length);
+                                clientStream.Close();
+                                return 1;
+                            }
+                            String[] plugDet = config.getPlug(parsed[1]);
+                            int stage = Int32.Parse(plugDet[4]);
+                            plugIn templug = createPlug(plugDet);
+                            if (templug == null)
+                            {
+                                Console.WriteLine("Failed to load plugin" + plugDet[0]);
+                                Environment.Exit(1);
+                            }
+                            templug.properties(parsed[2].Split('*'),dCount);
+                            switch (stage)
+                            {
+                                case 0:
+                                    plugsStZ.Add(templug);
+                                    break;
+                                case 1:
+                                    plugsStO.Add(templug);
+                                    break;
+                            }
+                        }
+                        else if (parsed[0].ToLower().Equals("div"))
+                        {
+                            divs.Add(Int32.Parse(parsed[1]));
+                        }
+                        else
+                        {
+                            message = encoder.GetBytes("Invalid Mode");
                             clientStream.Write(message, 0, message.Length);
                             clientStream.Close();
                             return 1;
                         }
-                        String[] plugDet = config.getPlug(parsed[1]);
-                        int stage = Int32.Parse(plugDet[4]);
-                        plugIn templug = createPlug(plugDet);
-                        if (templug == null)
-                        {
-                            Console.WriteLine("Failed to load plugin" + plugDet[0]);
-                            Environment.Exit(1);
-                        }
-                        templug.properties(parsed[2].Split('*'));
-                        switch (stage)
-                        {
-                            case 0:
-                                plugsStZ.Add(templug);
-                                break;
-                            case 1:
-                                plugsStO.Add(templug);
-                                break;
-                        }
-                    }
-                    else if (parsed[0].ToLower().Equals("div"))
-                    {
-                        divs.Add(Int32.Parse(parsed[1]));
                     }
                     else
                     {
-                        message = encoder.GetBytes("Invalid Mode");
-                        clientStream.Write(message, 0, message.Length);
-                        clientStream.Close();
-                        return 1;
+                        dCount = Int32.Parse(data[0]);
                     }
                 }
 

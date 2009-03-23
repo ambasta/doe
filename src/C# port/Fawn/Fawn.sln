@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fawn", "Fawn\Fawn.csproj", "{AFA72F9D-9D4C-4CD4-9BA6-ABAFEFFE076C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{72B865DE-B69C-4666-820B-A64149D7004E}"
+	ProjectSection(SolutionItems) = preProject
+		input.xml = input.xml
+		input.xsd = input.xsd
+		output.xml = output.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFA72F9D-9D4C-4CD4-9BA6-ABAFEFFE076C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA72F9D-9D4C-4CD4-9BA6-ABAFEFFE076C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA72F9D-9D4C-4CD4-9BA6-ABAFEFFE076C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA72F9D-9D4C-4CD4-9BA6-ABAFEFFE076C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

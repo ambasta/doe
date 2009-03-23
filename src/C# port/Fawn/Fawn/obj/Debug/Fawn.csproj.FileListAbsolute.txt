@@ -1,0 +1,5 @@
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Fawn\Fawn\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Fawn\Fawn\bin\Debug\Fawn.exe
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Fawn\Fawn\bin\Debug\Fawn.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Fawn\Fawn\obj\Debug\Fawn.exe
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Fawn\Fawn\obj\Debug\Fawn.pdb

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Inputs>
+  <Div>0</Div>
+  <Div>1</Div>
+  <Plugin>
+    <PlugName> Proximity </PlugName>
+    <plugInput> 1 0 3 true </plugInput>
+    <plugInput> 0 1 2 false </plugInput>
+  </Plugin>
+</Inputs>

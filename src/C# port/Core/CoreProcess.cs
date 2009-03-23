@@ -30,7 +30,7 @@ namespace Doe.Core
         public void permute()
         {
             int sjump = 1;
-            float scores = score();
+            double scores = score();
             int cond = 5;
             while (true)
             {
@@ -47,7 +47,7 @@ namespace Doe.Core
                                 mat[i,1]+=yp;
                                 if(check(i))
                                 {
-                                    float tscore = score();
+                                    double tscore = score();
                                     if(scores < tscore)
                                     {
                                         scores = tscore;
@@ -82,9 +82,9 @@ namespace Doe.Core
             return true;
         }
 
-        private float score()
+        private double score()
         {
-            float tscore = 0;
+            double tscore = 0;
             foreach (plugIn temp in plugList)
             {
                 tscore += temp.score(mat);
@@ -99,7 +99,7 @@ namespace Doe.Core
             {
                 temp += Convert.ToString(i)+" " +Convert.ToString(mat[i,0])+" "+Convert.ToString(mat[i,1])+"&";
             }
-            queue.Add(temp);
+            queue.Add(temp.Substring(0,temp.Length-1));
         }
     }
 }

@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Config.xml = Config.xml
 		Config.xsd = Config.xsd
+		Model.txt = Model.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalkBack", "TalkBack\TalkBack.csproj", "{568C045E-2CF7-4E22-A8EE-757E07AF9DA4}"

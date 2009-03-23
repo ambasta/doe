@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang=en>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+    <title>Doe</title>
+    <link rel="stylesheet" type="text/css" media="screen" title="Basic"
+        href="media/style.css">
+	<script src="scripts/prototype.js" type="text/javascript"></script>
+	<script src="scripts/scriptaculous.js" type="text/javascript"></script>
+	<script src="scripts/cufon-yui.js" type="text/javascript"></script>
+	<script src="scripts/Diavlo_Black_900.font.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		Cufon.replace('h1');
+		current = 'message';
+		new Draggable('arrange', { ghosting: 'true', handle: 'handle' });
+		new Draggable('schedule', { ghosting: 'true', handle: 'handle' });
+		new Draggable('garbage', { ghosting: 'true', handle: 'handle' });
+		new Draggable('building', { ghosting: 'true', handle: 'handle' });
+		function display(context)
+		{
+			$(current).fade({duration:0.2, queue:{position:'end',scope:'display'}});
+			$(context).appear({duration:0.2, queue:{position:'end',scope:'display'}});
+			current = context;
+		}
+	</script>
+   </head>
+
+  <body>
+	<div id="container">
+  	<div id="menubar">
+		<div id="logo">
+			<a href="#" onclick="display('message');"><h1>Doe</h1></a>
+		</div>
+		<div id="menu">
+			<a href="#" onclick="display('createList');">Create</a>, 
+			<a href="#" onclick="display('personaliseList');">Personalise</a>, 
+			<a href="#" onclick="display('learnList');">Learn</a> 
+		</div>
+	</div>
+	<div id="ribbon">
+		<div id="message">
+			Hi!  Welcome to the Development Optimisation Engine. Have fun.
+		</div>
+		<div id="context">
+			<ul id="createList" style="display:none">
+				<li>Project</li>
+				<li>Object</li>
+				<li>Session</li>
+			</ul>
+			<ul id="personaliseList" style="display:none">
+				<li>Client</li>
+				<li>Server</li>
+				<li>Logs</li>
+			</ul>
+			<ul id="learnList" style="display:none">
+				<li>More</li>
+			</ul>
+		</div>
+	</div>
+	<div id="plugins">
+		<ul id="pluginlist">
+			<li><div id="arrange"><img src='media/icons/64x64/plan.png'><br>Arrange</div></li>
+			<li><div id="schedule"><img src='media/icons/64x64/schedule.png'><br>Schedule</div></li>
+		</ul>
+	</div>
+	<div id="objects">
+		<ul id="objectlist">
+			<li><div id="garbage"><img src='media/icons/64x64/trash.png'><br>Garbage</div></li>
+			<li><div id="building"><img src='media/icons/64x64/home.png'><br>Building</div></li>
+		</ul>
+	</div>
+	<div id="workspace">
+		<a href="submit">update</a>
+	</div>
+				 
+	</div>
+  </body> 
+</html>

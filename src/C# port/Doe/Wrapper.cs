@@ -24,6 +24,7 @@ namespace Doe
                     Console.WriteLine("Bad config file");
                     Environment.Exit(1);
                 }
+                Console.WriteLine("Successfully loaded xml");
             }
             catch (customException e)
             {
