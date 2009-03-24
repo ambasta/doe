@@ -1,0 +1,5 @@
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\serialise\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\serialise\bin\Debug\serialise.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\serialise\bin\Debug\serialise.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\serialise\obj\Debug\serialise.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\serialise\obj\Debug\serialise.pdb

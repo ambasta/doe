@@ -1,17 +1,16 @@
-﻿using System.Net.Sockets;
-using System.Collections.Generic;
-using System.Threading;
-using System.Net;
+﻿using System;
 using System.IO;
-using System;
-using System.Runtime.Remoting;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
+using System.Net;
+using System.Threading;
+using System.Net.Sockets;
+using System.Reflection;
+using System.Collections.Generic;
 
 using Doe.Exceptions;
 using Doe.mXMLHandler;
 using Doe.PlugBase;
 using Doe.Core;
+using Doe;
 
 namespace Doe.TalkBack
 {
@@ -26,14 +25,14 @@ namespace Doe.TalkBack
             tcpListener = new TcpListener(IPAddress.Any, 1303);
         }
 
-        public void ListenForClients()
+        public void ListenForClients()                      //function to actually listen to clients
         {
             Console.WriteLine("Listening for Clients");
             this.tcpListener.Start();
             while (true)
             {
-                TcpClient client = this.tcpListener.AcceptTcpClient();
-                Thread clientThread = new Thread(new ParameterizedThreadStart(wrapCore));
+                TcpClient client = this.tcpListener.AcceptTcpClient();      //handle for new connection
+                Thread clientThread = new Thread(new ParameterizedThreadStart(wrapCore));           //pass handle to wrapCore and go back to listening
                 try
                 {
                     clientThread.Start(client);
@@ -45,62 +44,74 @@ namespace Doe.TalkBack
             }
         }
 
-        public void wrapCore(object clientArg)
+        public void wrapCore(object clientArg)          //function to handle connection from client
         {
-            TcpClient client = (TcpClient)clientArg;
+            TcpClient client = (TcpClient)clientArg;    //convert passed object to socket handle
             Console.WriteLine("Client connected");
             byte[] message = new byte[4096];
             NetworkStream clientStream = client.GetStream();
-            ASCIIEncoding encoder = new ASCIIEncoding();
+            int readBytes;
 
-            while (true)
+            try
+            {                                                       //read some data from socket
+                readBytes = clientStream.Read(message, 0, 4096);    //if client disconnects quit function
+            }
+            catch
             {
-                int readBytes;
-                try
-                {
-                    readBytes = clientStream.Read(message, 0, 4096);
-                }
-                catch
-                {
-                    break;
-                }
+                return;
+            }
 
-                if (readBytes == 0)
-                {
-                    Console.WriteLine("Client Disconnected");
-                    return;
-                }
+            if (readBytes == 0)
+            {
+                Console.WriteLine("Client Disconnected");
+                return;
+            }
 
-                int mode = Int32.Parse(encoder.GetString(message, 0, readBytes));
+            int mode = Int32.Parse(common.code(message,0,readBytes));       //parse mode from input
+            try
+            {       //if any of the called function crash due to abrupt client disconnection.. print that client disconnected and leave
                 switch (mode)
                 {
                     case 1:
-                        sendXml(clientStream);
+                        sendXml(clientStream);      //return xml
                         break;
                     case 3:
-                        message = encoder.GetBytes("Accepted");
+                        message = common.code("Accepted");         //return accepted
                         clientStream.Write(message, 0, message.Length);
-                        block(clientStream);
+                        clientStream.Flush();
+                        block(clientStream);                            //call block to process input
                         break;
                     default:
-                        message = encoder.GetBytes("Invalid Mode");
+                        message = common.code("Invalid Mode");     //return invalid mode
                         clientStream.Write(message, 0, message.Length);
-                        clientStream.Close();
+                        clientStream.Flush();
                         break;
                 }
             }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            try
+            {   //try to close clientstream
+                clientStream.Close();
+            }
+            catch { }
             client.Close();
         }
 
-        private void sendXml(NetworkStream clientStream)
+        private void sendXml(NetworkStream clientStream)            //send xml file to client
         {
             FileStream fs = null;
             try
             {
                 fs = new FileStream("Config.xml", FileMode.Open, FileAccess.Read);
-                UInt64 fLen = (UInt64)fs.Length;
+                UInt64 fLen = (UInt64)fs.Length;        //store file size of config
 
-                clientStream.Write(BitConverter.GetBytes(fLen), 0, 8);
+                clientStream.Write(BitConverter.GetBytes(fLen), 0, 8);      //write first 8 bytes as file size
+                clientStream.Flush();
+
                 int br = 0;
                 byte[] buff = new byte[4096];
 
@@ -108,6 +119,7 @@ namespace Doe.TalkBack
                 {
                     br = fs.Read(buff, 0, 4096);
                     clientStream.Write(buff, 0, br);
+                    clientStream.Flush();
                 } while (br == 4096);
             }
             catch (Exception e)
@@ -117,133 +129,124 @@ namespace Doe.TalkBack
                     fs.Close();
                 }
                 catch { }
-                try
-                {
-                    clientStream.Close();
-                }
-                catch { }
-                throw e;
+                Console.WriteLine(e.Message);
             }
         }
 
-        private int block(NetworkStream clientStream)
+        private void block(NetworkStream clientStream)
         {
             byte[] message = new byte[4096];
-            ASCIIEncoding encoder = new ASCIIEncoding();
-            String[] data;
-            List<int> divs = new List<int>();
-            List<plugIn> plugsStZ = new List<plugIn>();
-            List<plugIn> plugsStO = new List<plugIn>();
-            List<string> queue = new List<string>();
+            String[] data;          //input from client as divCount,{div$divid},{plugin$pluginName${pluginAttib}}
+            List<int> divs = new List<int>();                       //list of divisions
+            List<plugIn> plugsStZ = new List<plugIn>();             //list of plugins for stage 0
+            List<plugIn> plugsStO = new List<plugIn>();             //list of plugins for stage 1
+            List<string> queue = new List<string>();                //shared queue for output
 
-            while (true)
+            int readBytes;
+            readBytes = clientStream.Read(message, 0, 4096);        //recieve input from client
+
+            if (readBytes == 0)
             {
-                int readBytes;
-                try
-                {
-                    readBytes = clientStream.Read(message, 0, 4096);
-                }
-                catch
-                {
-                    break;
-                }
+                Console.WriteLine("Client Disconnected");
+                return;
+            }
 
-                if (readBytes == 0)
-                {
-                    throw new customException("Client Disconnected");
-                }
+            object temp = common.deserialise(message);                     //deserialize input
 
-                object temp = deserialize(message);
+            if (!(temp is String[]))                                //if input isn't a string array
+            {
+                message = common.code("Invalid Data");
+                clientStream.Write(message, 0, message.Length);
+                clientStream.Flush();
+                return;
+            }
 
-                if (!(temp is String[]))
+            data = (String[])temp;                                  //convert deserialized input to string array
+            int dCount = 0;                                         //no. of divisions
+            foreach(String temper in data)
+            {
+                if (!temper.Equals(data[0]))
                 {
-                    message = encoder.GetBytes("Invalid Data");
-                    clientStream.Write(message, 0, message.Length);
-                    clientStream.Close();
-                    break;
-                }
-
-                data = (String[])temp;
-                int dCount = 0;
-                foreach(String temper in data)
-                {
-                    if (!temper.Equals(data[0]))
+                    String[] parsed = temper.Split('$');            //parse data element
+                    if (parsed[0].ToLower().Equals("plugin"))
                     {
-                        String[] parsed = temper.Split('$');
-                        if (parsed[0].ToLower().Equals("plugin"))
+                        if (!config.checkPlug(parsed[1]))           //check if desired plugin exists
                         {
-                            if (!config.checkPlug(parsed[1]))
-                            {
-                                message = encoder.GetBytes("Invalid Plugin: " + parsed[1]);
-                                clientStream.Write(message, 0, message.Length);
-                                clientStream.Close();
-                                return 1;
-                            }
-                            String[] plugDet = config.getPlug(parsed[1]);
-                            int stage = Int32.Parse(plugDet[4]);
-                            plugIn templug = createPlug(plugDet);
-                            if (templug == null)
-                            {
-                                Console.WriteLine("Failed to load plugin" + plugDet[0]);
-                                Environment.Exit(1);
-                            }
-                            templug.properties(parsed[2].Split('*'),dCount);
-                            switch (stage)
-                            {
-                                case 0:
-                                    plugsStZ.Add(templug);
-                                    break;
-                                case 1:
-                                    plugsStO.Add(templug);
-                                    break;
-                            }
-                        }
-                        else if (parsed[0].ToLower().Equals("div"))
-                        {
-                            divs.Add(Int32.Parse(parsed[1]));
-                        }
-                        else
-                        {
-                            message = encoder.GetBytes("Invalid Mode");
+                            message = common.code("Invalid Plugin: " + parsed[1]);
                             clientStream.Write(message, 0, message.Length);
-                            clientStream.Close();
-                            return 1;
+                            clientStream.Flush();
+                            return;
                         }
+
+                        String[] plugDet = config.getPlug(parsed[1]);       //get details of desired plugin
+                        int stage = Int32.Parse(plugDet[4]);                //get stage of desired plugin
+                        plugIn templug = createPlug(plugDet);               //actually create the plugin
+                        if (templug == null)                                //if plugin couldn't be created return error
+                        {
+                            Console.WriteLine("Failed to load plugin" + plugDet[0]);
+                            Environment.Exit(1);    //bugged plugin in config, exit the server
+                        }
+
+                        templug.properties(parsed[2].Split('*'),dCount);    //set plugin properties with parsed attributes specified as {{att }[-" "]*}[-"*"] and the number of divs
+                        switch (stage)      //add initialized plugin to respective queue
+                        {
+                            case 0:
+                                plugsStZ.Add(templug);
+                                break;
+                            case 1:
+                                plugsStO.Add(templug);
+                                break;
+                        }
+                    }
+                    else if (parsed[0].ToLower().Equals("div"))     //if the parsed data indicates div
+                    {                                               //add divId to divList
+                        divs.Add(Int32.Parse(parsed[1]));
                     }
                     else
-                    {
-                        dCount = Int32.Parse(data[0]);
+                    {       //if neither div not plugin is specified, return error Message
+                        message = common.code("Invalid Mode");
+                        clientStream.Write(message, 0, message.Length);
+                        clientStream.Flush();
+                        return;
                     }
                 }
-
-                //spawn a coreprocess and ask to write to queue
-                CoreProcess processor = new CoreProcess(divs, plugsStZ, queue);
-                Thread processT = new Thread(new ThreadStart(processor.permute));
-                processT.Start();
-                //spwan a coreoutput and ask to read from queue
-                CoreOutput display = new CoreOutput(queue, clientStream);
-                Thread displayT = new Thread(new ThreadStart(display.show));
-                displayT.Start();
+                else
+                {       //for the first element of data, find out divCount from it
+                    dCount = Int32.Parse(data[0]);
+                }
             }
-            return 0;
+
+            //spawn a coreprocess and ask to write to queue
+            CoreProcess processor = new CoreProcess(divs, plugsStZ, queue);
+            Thread processT = new Thread(new ThreadStart(processor.permute));
+            processT.Start();
+            //spwan a coreoutput and ask to read from queue
+            CoreOutput display = new CoreOutput(queue, clientStream);
+            Thread displayT = new Thread(new ThreadStart(display.show));
+            displayT.Start();
+
+            Thread.Sleep(100);
+            while (displayT.IsAlive) ;  //sping till i am pushing more output
+            if(processT.IsAlive)
+                processT.Abort();           //as display is over due to either disconnect or no data, simply ask processT to abort if needed
+            
+            processT.Join();
+            displayT.Join();
         }
 
-        private plugIn createPlug(String[] data)
+        private plugIn createPlug(string[] data)
         {
-            ObjectHandle handle = Activator.CreateInstance(data[1], data[2]);
-            object test = handle.Unwrap();
-
-            if (test is plugIn)
-                return (plugIn)test;
+            if(File.Exists(data[1]))
+            {
+                Assembly assembly = Assembly.LoadFile(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\" + data[1]);
+                foreach (Type type in assembly.GetTypes())
+                {
+                    object test = Activator.CreateInstance(type);
+                    if (test is plugIn)
+                        return (plugIn)test;
+                }
+            }
             return null;
-        }
-
-        private object deserialize(byte[] array)
-        {
-            MemoryStream ms = new MemoryStream(array);
-            BinaryFormatter bf = new BinaryFormatter();
-            ms.Position = 0;
-            return bf.Deserialize(ms);
         }
     }
 }

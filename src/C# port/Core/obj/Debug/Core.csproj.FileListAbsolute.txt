@@ -12,3 +12,5 @@ C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Core\bin\Debug\Core.pdb
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Core\bin\Debug\PlugBase.dll
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Core\bin\Debug\PlugBase.pdb
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Core\obj\Debug\Core.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Core\bin\Debug\common.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Core\bin\Debug\common.pdb

@@ -27,7 +27,6 @@ namespace Doe.mXMLHandler
             }
             //code to check if config matches schema
             XmlSchemaSet xs = new XmlSchemaSet();
-            XmlSchema X = new XmlSchema();
 
             xs.Add("",schemaPath);
 
@@ -49,7 +48,7 @@ namespace Doe.mXMLHandler
 
             foreach (XmlNode temp in plugList)
             {
-                if (temp.Value.Equals(plugName))
+                if (temp.InnerText.Equals(plugName))
                     return true;
             }
 
@@ -65,18 +64,18 @@ namespace Doe.mXMLHandler
 
             foreach (XmlNode temp in plugList)
             {
-                XmlElement plugName = (XmlElement)temp.SelectSingleNode("/Plugins/Plugin/PlugName");
-                if (s.Equals(plugName))
+                XmlElement plugName = (XmlElement)temp.ChildNodes[0];
+                if (s.Equals(plugName.InnerText))
                 {
-                    XmlElement plugLocation = (XmlElement)temp.SelectSingleNode("/Plugins/Plugin/PlugLocation");
-                    XmlElement plugClass = (XmlElement)temp.SelectSingleNode("/Plugins/Plugin/PlugClass");
-                    XmlElement plugCompat = (XmlElement)temp.SelectSingleNode("/Plugins/Plugin/PlugCompat");
-                    XmlElement stage = (XmlElement)temp.SelectSingleNode("/Plugins/Plugin/Stage");
-                    plugDet[0] = plugName.Value;
-                    plugDet[1] = plugLocation.Value;
-                    plugDet[2] = plugClass.Value;
-                    plugDet[3] = plugCompat.Value;
-                    plugDet[4] = stage.Value;
+                    XmlElement plugLocation = (XmlElement)temp.ChildNodes[1];
+                    XmlElement plugClass = (XmlElement)temp.ChildNodes[2];
+                    XmlElement plugCompat = (XmlElement)temp.ChildNodes[4];
+                    XmlElement stage = (XmlElement)temp.ChildNodes[6];
+                    plugDet[0] = plugName.InnerText;
+                    plugDet[1] = plugLocation.InnerText;
+                    plugDet[2] = plugClass.InnerText;
+                    plugDet[3] = plugCompat.InnerText;
+                    plugDet[4] = stage.InnerText;
                 }
             }
 

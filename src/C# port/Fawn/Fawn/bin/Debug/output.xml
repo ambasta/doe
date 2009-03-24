@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Outputs>
+  <Div>
+    <Id xmlns="0" />
+    <PosX xmlns="8" />
+    <PosY xmlns="-1" />
+  </Div>
+  <Div>
+    <Id xmlns="1" />
+    <PosX xmlns="6" />
+    <PosY xmlns="5" />
+  </Div>
+  <Div>
+    <Id xmlns="2" />
+    <PosX xmlns="1" />
+    <PosY xmlns="8" />
+  </Div>
+  <Div>
+    <Id xmlns="3" />
+    <PosX xmlns="-4" />
+    <PosY xmlns="7" />
+  </Div>
+  <Div>
+    <Id xmlns="4" />
+    <PosX xmlns="-8" />
+    <PosY xmlns="3" />
+  </Div>
+  <Div>
+    <Id xmlns="5" />
+    <PosX xmlns="-8" />
+    <PosY xmlns="-3" />
+  </Div>
+  <Div>
+    <Id xmlns="6" />
+    <PosX xmlns="-4" />
+    <PosY xmlns="-7" />
+  </Div>
+  <Div>
+    <Id xmlns="7" />
+    <PosX xmlns="1" />
+    <PosY xmlns="-8" />
+  </Div>
+  <Div>
+    <Id xmlns="8" />
+    <PosX xmlns="6" />
+    <PosY xmlns="-5" />
+  </Div>
+</Outputs>

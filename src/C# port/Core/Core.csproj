@@ -50,6 +50,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{7AD9BDCF-74B4-4C00-9173-96F246AA621F}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlugBase\PlugBase.csproj">
       <Project>{582E1EDA-2ABB-4974-A063-543415C93158}</Project>
       <Name>PlugBase</Name>

@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
+
 using Doe.Exceptions;
 using Doe.mXMLHandler;
 using Doe.TalkBack;
 
 namespace Doe
 {
-    class Wrapper
-    {
+    class Wrapper                                                   //class to load and validate XML
+    {                                                               //also starts the server
         static void Main(string[] args)
         {
             String docPath, scmPath;
@@ -35,6 +33,11 @@ namespace Doe
             Server myServer = new Server(config);
             Thread myThread = new Thread(new ThreadStart(myServer.ListenForClients));
             myThread.Start();
+
+            while (!myThread.IsAlive) ;         //spin a while for thread to be alive
+            while (myThread.IsAlive)
+                Thread.Sleep(100);          //do nothing while thread is alive
+            myThread.Join();
         }
     }
 }

@@ -3,3 +3,5 @@ C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Fawn\Fawn\bin\Debug\Fawn.e
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Fawn\Fawn\bin\Debug\Fawn.pdb
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Fawn\Fawn\obj\Debug\Fawn.exe
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Fawn\Fawn\obj\Debug\Fawn.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Fawn\Fawn\bin\Debug\common.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Fawn\Fawn\bin\Debug\common.pdb

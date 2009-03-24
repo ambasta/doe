@@ -26,7 +26,6 @@ namespace Fawn
             }
             //code to check if config matches schema
             XmlSchemaSet xs = new XmlSchemaSet();
-            XmlSchema X = new XmlSchema();
 
             xs.Add("", schemaPath);
 
@@ -41,32 +40,18 @@ namespace Fawn
             return isValid;
         }
 
-        public bool checkPlug(string plugName)
-        {
-            XmlElement root = plugDoc.DocumentElement;
-            XmlNodeList plugList = root.SelectNodes("/Plugins/Plugin/PlugName");
-
-            foreach (XmlNode temp in plugList)
-            {
-                if (temp.Value.Equals(plugName))
-                    return true;
-            }
-
-            return false;
-        }
-
         public int getCount(string s)
         {
             XmlElement root = plugDoc.DocumentElement;
-            XmlNodeList divlist = root.SelectNodes(s);
-            return divlist.Count;
+            XmlNodeList list = root.SelectNodes(s);
+            return list.Count;
         }
 
         public XmlNodeList getNodes(string s)
         {
             XmlElement root = plugDoc.DocumentElement;
-            XmlNodeList plugList = root.SelectNodes(s);
-            return plugList;
+            XmlNodeList List = root.SelectNodes(s);
+            return List;
         }
 
         public static void customEHandle(object sender, ValidationEventArgs args)

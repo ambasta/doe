@@ -24,3 +24,5 @@ C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\TalkBack\bin\Debug\Core.pd
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\TalkBack\bin\Debug\PlugBase.pdb
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\TalkBack\bin\Debug\mXMLHandler.pdb
 C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\TalkBack\obj\Debug\TalkBack.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\TalkBack\bin\Debug\common.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\TalkBack\bin\Debug\common.pdb

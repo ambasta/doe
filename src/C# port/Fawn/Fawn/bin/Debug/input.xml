@@ -2,9 +2,22 @@
 <Inputs>
   <Div>0</Div>
   <Div>1</Div>
+  <Div>2</Div>
+  <Div>3</Div>
+  <Div>4</Div>
+  <Div>5</Div>
+  <Div>6</Div>
+  <Div>7</Div>
+  <Div>8</Div>
   <Plugin>
-    <PlugName> Proximity </PlugName>
-    <plugInput> 1 0 3 true </plugInput>
-    <plugInput> 0 1 2 false </plugInput>
+    <PlugName>Proximity</PlugName>
+    <plugInput>0 4 1 true</plugInput>
+	<plugInput>1 4 1 true</plugInput>
+	<plugInput>2 4 1 true</plugInput>
+	<plugInput>3 4 1 true</plugInput>
+	<plugInput>5 4 1 true</plugInput>
+	<plugInput>6 4 1 true</plugInput>
+	<plugInput>7 4 1 true</plugInput>
+	<plugInput>8 4 1 true</plugInput>
   </Plugin>
 </Inputs>

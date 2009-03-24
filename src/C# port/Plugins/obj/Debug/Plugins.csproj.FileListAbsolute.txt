@@ -1,0 +1,7 @@
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Plugins\bin\Debug\Plugins.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Plugins\bin\Debug\Plugins.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Plugins\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Plugins\obj\Debug\Plugins.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Plugins\obj\Debug\Plugins.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Plugins\bin\Debug\PlugBase.dll
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\C# port\Plugins\bin\Debug\PlugBase.pdb
