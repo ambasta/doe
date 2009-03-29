@@ -10,21 +10,35 @@
 	</Window.Resources>
 	<Grid Width="Auto" Height="Auto">
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="0.050*"/>
-			<ColumnDefinition Width="0.950*"/>
+			<ColumnDefinition Width="31.2"/>
+			<ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="0.050*"/>
-			<RowDefinition Height="0.090*"/>
-			<RowDefinition Height="0.800*"/>
-			<RowDefinition Height="0.060*"/>
+			<RowDefinition Height="22.25"/>
+			<RowDefinition Height="40.161"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="26.781"/>
 		</Grid.RowDefinitions>
-		<Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Fill="{x:Null}" Stroke="#FF000000" Grid.RowSpan="4" Grid.ColumnSpan="2"/>
-		<Menu HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2"/>
-		<Menu HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto" Grid.Column="0" Grid.RowSpan="1" Grid.Row="1" Grid.ColumnSpan="2"/>
-		<Menu HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto" Grid.Column="0" Grid.RowSpan="1" Grid.Row="3" Grid.ColumnSpan="2"/>
-		<ToolBar Margin="0,0,0,0" VerticalAlignment="Stretch" Height="Auto" Grid.Row="2"/>
-		<Viewport3D Margin="0,0,0,0" Grid.Column="1" Grid.Row="2">
+		<Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Stroke="#FF000000" Grid.RowSpan="4" Grid.ColumnSpan="2">
+			<Rectangle.Fill>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="#FF000000" Offset="0"/>
+					<GradientStop Color="#FF000000" Offset="1"/>
+					<GradientStop Color="#FF746C6C" Offset="0.527"/>
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<Menu HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" x:Name="Main_Menu" Background="#FF242222" Foreground="#FFFFFFFF">
+			<MenuItem Header="File" x:Name="File"/>
+			<MenuItem Header="Edit" x:Name="Edit"/>
+			<MenuItem Header="View" x:Name="View"/>
+			<MenuItem Header="Tools" x:Name="Tools"/>
+			<MenuItem Header="Help" x:Name="Help"/>
+		</Menu>
+		<Menu HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto" Grid.Column="0" Grid.RowSpan="1" Grid.Row="1" Grid.ColumnSpan="2" x:Name="Sub_Menu"/>
+		<Rectangle Fill="#00131212" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto" Stroke="#00000000" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" x:Name="StatusBar"/>
+		<ToolBar Margin="0,0,0,0" VerticalAlignment="Stretch" Height="Auto" Grid.Row="2" x:Name="Toolbar"/>
+		<Viewport3D Margin="0,0,0,0" Grid.Column="1" Grid.Row="2" x:Name="Canvas">
 			<Viewport3D.Camera>
 				<PerspectiveCamera FieldOfView="45" FarPlaneDistance="100" LookDirection="0,0,-3.4142135623731" NearPlaneDistance="0.1" Position="0,0,3.4142135623731" UpDirection="0,1,0"/>
 			</Viewport3D.Camera>
