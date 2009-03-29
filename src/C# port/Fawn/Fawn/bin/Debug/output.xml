@@ -1,48 +1,48 @@
 <?xml version="1.0"?>
 <Outputs>
   <Div>
-    <Id xmlns="0" />
-    <PosX xmlns="8" />
-    <PosY xmlns="-1" />
+    <Id>0</Id>
+    <PosX>-1</PosX>
+    <PosY>0</PosY>
   </Div>
   <Div>
-    <Id xmlns="1" />
-    <PosX xmlns="6" />
-    <PosY xmlns="5" />
+    <Id>1</Id>
+    <PosX>-1</PosX>
+    <PosY>1</PosY>
   </Div>
   <Div>
-    <Id xmlns="2" />
-    <PosX xmlns="1" />
-    <PosY xmlns="8" />
+    <Id>2</Id>
+    <PosX>-2</PosX>
+    <PosY>2</PosY>
   </Div>
   <Div>
-    <Id xmlns="3" />
-    <PosX xmlns="-4" />
-    <PosY xmlns="7" />
+    <Id>3</Id>
+    <PosX>-3</PosX>
+    <PosY>3</PosY>
   </Div>
   <Div>
-    <Id xmlns="4" />
-    <PosX xmlns="-8" />
-    <PosY xmlns="3" />
+    <Id>4</Id>
+    <PosX>-2</PosX>
+    <PosY>4</PosY>
   </Div>
   <Div>
-    <Id xmlns="5" />
-    <PosX xmlns="-8" />
-    <PosY xmlns="-3" />
+    <Id>5</Id>
+    <PosX>-3</PosX>
+    <PosY>5</PosY>
   </Div>
   <Div>
-    <Id xmlns="6" />
-    <PosX xmlns="-4" />
-    <PosY xmlns="-7" />
+    <Id>6</Id>
+    <PosX>-2</PosX>
+    <PosY>6</PosY>
   </Div>
   <Div>
-    <Id xmlns="7" />
-    <PosX xmlns="1" />
-    <PosY xmlns="-8" />
+    <Id>7</Id>
+    <PosX>-3</PosX>
+    <PosY>7</PosY>
   </Div>
   <Div>
-    <Id xmlns="8" />
-    <PosX xmlns="6" />
-    <PosY xmlns="-5" />
+    <Id>8</Id>
+    <PosX>-1</PosX>
+    <PosY>8</PosY>
   </Div>
 </Outputs>

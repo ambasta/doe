@@ -152,11 +152,14 @@ namespace Fawn
                     foreach (string blah in ans)
                     {
                         outp.WriteStartElement("Div");
-                        outp.WriteStartElement("Id", blah.Split(' ')[0]);
+                        outp.WriteStartElement("Id");
+                        outp.WriteValue(blah.Split(' ')[0]);
                         outp.WriteEndElement();
-                        outp.WriteStartElement("PosX", blah.Split(' ')[1]);
+                        outp.WriteStartElement("PosX");
+                        outp.WriteValue(blah.Split(' ')[1]);
                         outp.WriteEndElement();
-                        outp.WriteStartElement("PosY", blah.Split(' ')[2]);
+                        outp.WriteStartElement("PosY");
+                        outp.WriteValue(blah.Split(' ')[0]);
                         outp.WriteEndElement();
                         outp.WriteEndElement();
                     }

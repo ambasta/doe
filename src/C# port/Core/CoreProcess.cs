@@ -67,7 +67,7 @@ namespace Doe.Core
                             mat[i, 1] -= yp;
                         }
                     }
-                    if (initScore < matScore)
+                    if (initScore > matScore)
                     {
                         matScore = initScore;
                         mat[i, 0] += movex;

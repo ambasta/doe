@@ -3,17 +3,13 @@
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Core/CoreProcess.cs" ctype="Workbench">
-    <Files>
-      <File FileName="mXMLHandler/xHandle.cs" Line="29" Column="50" />
-      <File FileName="Core/CoreProcess.cs" Line="34" Column="12" />
-    </Files>
+  <MonoDevelop.Ide.Workbench ctype="Workbench">
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Core" expanded="True">
-            <Node name="CoreProcess.cs" selected="True" />
-          </Node>
+          <Node name="Core" expanded="True" />
+          <Node name="Exceptions" selected="True" />
+          <Node name="mXMLHandler" expanded="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">

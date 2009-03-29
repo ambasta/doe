@@ -1,0 +1,10 @@
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\End User clients\Fawn\Fawn\bin\Debug\Fawn.exe
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\End User clients\Fawn\Fawn\bin\Debug\Fawn.pdb
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\End User clients\Fawn\Fawn\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\End User clients\Fawn\Fawn\obj\Debug\Window1.baml
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\End User clients\Fawn\Fawn\obj\Debug\Window1.g.cs
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\End User clients\Fawn\Fawn\obj\Debug\App.g.cs
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\End User clients\Fawn\Fawn\obj\Debug\Fawn_MarkupCompile.cache
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\End User clients\Fawn\Fawn\obj\Debug\Fawn.g.resources
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\End User clients\Fawn\Fawn\obj\Debug\Fawn.exe
+C:\Users\Amit Prakash Ambasta\Imagine\doe\src\End User clients\Fawn\Fawn\obj\Debug\Fawn.pdb
